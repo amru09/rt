@@ -1,1 +1,1 @@
-# rt
+# Aplikasi Rizky dan Taufik
