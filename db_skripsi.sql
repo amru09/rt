@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS `ref_jam` (
   `jam` char(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- Dumping data for table db_skripsi.ref_jam: ~0 rows (approximately)
+-- Dumping data for table db_skripsi.ref_jam: ~1 rows (approximately)
 /*!40000 ALTER TABLE `ref_jam` DISABLE KEYS */;
 INSERT INTO `ref_jam` (`jam`) VALUES
 	('07:00 - 09:00');
@@ -58,6 +58,8 @@ CREATE TABLE IF NOT EXISTS `tb_kehadiran` (
 
 -- Dumping data for table db_skripsi.tb_kehadiran: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tb_kehadiran` DISABLE KEYS */;
+INSERT INTO `tb_kehadiran` (`id`, `id_guru`, `id_siswa`, `id_mapel`, `kelas`, `tgl`, `waktu`) VALUES
+	(12, '132456', '182270', '001', 'VII', '2022-02-17', '07:00 - 09:00');
 /*!40000 ALTER TABLE `tb_kehadiran` ENABLE KEYS */;
 
 -- Dumping structure for table db_skripsi.tb_mapel
@@ -87,6 +89,13 @@ CREATE TABLE IF NOT EXISTS `tb_qrcode` (
 
 -- Dumping data for table db_skripsi.tb_qrcode: ~0 rows (approximately)
 /*!40000 ALTER TABLE `tb_qrcode` DISABLE KEYS */;
+INSERT INTO `tb_qrcode` (`id`, `id_guru`, `id_mapel`, `tgl`, `waktu`) VALUES
+	(1, '132456', '002', '2022-02-10', '07:00 - 09:00'),
+	(2, '132456', '002', '2022-02-08', '07:00 - 09:00'),
+	(3, '132456', '002', '2022-02-10', '07:00 - 09:00'),
+	(4, '132456', '001', '2022-01-01', '07:00 - 09:00'),
+	(5, '132456', '003', '2022-01-31', '07:00 - 09:00'),
+	(6, '132456', '001', '2022-02-17', '07:00 - 09:00');
 /*!40000 ALTER TABLE `tb_qrcode` ENABLE KEYS */;
 
 -- Dumping structure for table db_skripsi.tb_siswa
@@ -100,7 +109,7 @@ CREATE TABLE IF NOT EXISTS `tb_siswa` (
   PRIMARY KEY (`id_siswa`) USING BTREE
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Dumping data for table db_skripsi.tb_siswa: ~0 rows (approximately)
+-- Dumping data for table db_skripsi.tb_siswa: ~1 rows (approximately)
 /*!40000 ALTER TABLE `tb_siswa` DISABLE KEYS */;
 INSERT INTO `tb_siswa` (`id_siswa`, `nama`, `jkel`, `kelas`, `tempat_lahir`, `tgl_lahir`) VALUES
 	('182270', 'Muhammad Rizky Amru Husain', 'L', 'VII', 'Sudiang', '2022-02-07');

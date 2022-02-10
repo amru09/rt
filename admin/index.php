@@ -29,6 +29,10 @@
     <link rel="stylesheet" href="css/select2.min.css">
     <link rel="stylesheet" href="css/select2-bootstrap.css">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+    <script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/barcode/qrcode.js"></script>
+	<script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
+	<script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
 
 </head>
 
@@ -98,8 +102,8 @@
             <!-- Session Siswa -->
             <?php  }elseif ($_SESSION['status'] == 'SISWA') { ?>
 
-            <li class="nav-item <?php if($_GET['page'] == 'rekap-kehadiran') {echo "active";} ?>" >
-                <a class="nav-link" href="?page=rekap-kehadiran">
+            <li class="nav-item <?php if($_GET['page'] == 'absen-qr') {echo "active";} ?>" >
+                <a class="nav-link" href="?page=absen-qr">
                     <i style="font-size: 17.5px;" class="fas fa-fw fa-book"></i>
                     <span>Scan QR Code</span></a>
             </li>
@@ -163,6 +167,10 @@
                         include "settings-user.php";
                     } elseif ($_GET['page'] == 'rekap-kehadiran') {
                         include "rekapitulasi-kehadiran.php";
+                    } elseif ($_GET['page'] == 'qrcode') {
+                        include "qrcode.php";
+                    } elseif ($_GET['page'] == 'absen-qr') {
+                        include "absen-qr.php";
                     } 
                 ?>
             </div> 
@@ -224,7 +232,6 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin-2.min.js"></script>
     <script src="js/select2.min.js"></script>
-    <script src="js/anchor.js"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/chart.js/Chart.min.js"></script>
@@ -246,6 +253,10 @@
     </script>
 </body>
 <script src="assets/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
+<script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
+<script type="text/javascript" src="assets/barcode/qrcode.js"></script>
+<script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
+<script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
 <?php include('assets/paginasi/script-paginasi.php'); ?>
 <?php 
 function TanggalIndo($date){

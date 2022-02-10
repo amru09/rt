@@ -42,7 +42,8 @@ include_once("admin/config/base-url.php");
 		{
 			session_start();
 			$_SESSION['id_user']    = $row['id_siswa'];
-			$_SESSION['nama']        = $row['nama'];
+			$_SESSION['nama']       = $row['nama'];
+			$_SESSION['kelas']		= $row['kelas'];
 			$_SESSION['status'] = 'SISWA';
 
 			// Jika Sukses, redirect halaman menggunakan javascript

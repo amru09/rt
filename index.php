@@ -119,7 +119,7 @@ function TanggalIndo($date){
 
 $(document).ready(function() { 
 $("#formLogin").submit(function(e) {
-var data = $("#formLogin").serialize();
+  var data = $("#formLogin").serialize();
   $.ajax({
 
         type : 'POST',
@@ -151,8 +151,8 @@ var data = $("#formLogin").serialize();
             alert(myJson.status); */
             
           }
-        }/*  */
-        });
+        }
+  });
           return false;
     });
 });
