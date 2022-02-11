@@ -14,6 +14,9 @@
                                         id_mapel = '$id_mapel',
                                         tgl = '$tgl',
                                         waktu = '$waktu'");
+                                        
+    $_SESSION['val'] = $id_guru."||".$id_mapel."||".$tgl."||".$waktu;
+
     if ($result) {
         echo '<script language="javascript"> window.location.href = "'.$base_url_back.'/index.php?page=qrcode&val='.$id_guru.'||'.$id_mapel.'||'.$tgl.'||'.$waktu.'" </script>';
     } else {

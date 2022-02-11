@@ -161,8 +161,6 @@
                         include "data-mapel.php";
                     } elseif ($_GET['page'] == 'riwayat-absen') {
                         include "riwayat-absen.php";
-                    } elseif ($_GET['page'] == 'rekapitulasi-absen') {
-                        include "rekapitulasi-absen.php";
                     } elseif ($_GET['page'] == 'kelola-akun') {
                         include "settings-user.php";
                     } elseif ($_GET['page'] == 'rekap-kehadiran') {
@@ -171,6 +169,8 @@
                         include "qrcode.php";
                     } elseif ($_GET['page'] == 'absen-qr') {
                         include "absen-qr.php";
+                    } elseif ($_GET['page'] == 'rekapitulasi-absen') {
+                        include "rekap.php";
                     } 
                 ?>
             </div> 

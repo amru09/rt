@@ -10,7 +10,7 @@
 
                     
                     <div class="row">
-
+                        
 <!-- Earnings (Monthly) Card Example -->
 <?php if ($_SESSION['status'] == 'ADMIN') { ?>
     <div class="col-xl-12 col-md-6 mb-4">
@@ -32,7 +32,12 @@
                     <h1 class="display-4">Guru</h1>
                 </div>
                 <div class="text-center mt-4">
-                <a  class="btn btn-primary" data-toggle="modal" data-target="#addDataModal"><i class="fas fa-plus-circle" aria-hidden="true"></i> Buat Kelas</a>
+                <?php if ($_SESSION['val'] <> '' || $_SESSION['val'] <> NULL) { ?>
+                        <a href="?page=qrcode&val=<?php echo $_SESSION['val']; ?>"  class="btn btn-primary"><i class="fas fa-plus-circle" aria-hidden="true"></i> Lihat QR Code Kelas</a>
+                    <?php } elseif ($_SESSION['val'] == NULL) { ?>
+                        <a  class="btn btn-primary" data-toggle="modal" data-target="#addDataModal"><i class="fas fa-plus-circle" aria-hidden="true"></i> Buat Kelas</a>
+                    <?php } ?>
+               
                 </div>
             </div>
         </div>
@@ -44,7 +49,7 @@
                 <div class="text-center">
                     <h1 class="display-3">Selamat Datang</h1>
                     <h1 class="display-4">Siswa</h1>
-                    <a href="scan.php?id_siswa=<?php echo $ID_USER ?>&kelas=<?php echo $_SESSION['kelas']; ?>" class="btn btn-primary"><i class="fas fa-scan" aria-hidden="true"></i> Scan Kelas</a>
+                    <!-- <a href="scan.php?id_siswa=<?php echo $ID_USER ?>&kelas=<?php echo $_SESSION['kelas']; ?>" class="btn btn-primary"><i class="fas fa-scan" aria-hidden="true"></i> Scan Kelas</a> -->
                 </div>
             </div>
         </div>
@@ -55,6 +60,7 @@
 <div class="modal-dialog modal-dialog-centered modal-lg">
 <div class="modal-content">
 
+    
     <div class="modal-header border-bottom-secondary">
     <h5 class="modal-title text-gray-900">Tambah</h5>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
@@ -62,6 +68,7 @@
     </button>
     </div>
 
+    <!-- Modal buat kelas -->
     <form action="controller_addqrcode.php" method="POST" enctype="multipart/form-data">
     <div class="modal-body text-gray-900">
         <input type="hidden" name="id_guru" value="<?php echo $ID_USER; ?>">
@@ -76,12 +83,10 @@
                 ?>
             </select>
         </div>
-        
         <div class="form-group">
             <label for="data2">Tanggal</label>
             <input type="date" class="form-control" name="tgl" required="required">
         </div>
-
         <div class="form-group">
             <label for="data2">Pilih Jam Pelajaran</label>
             <select name="waktu" class="form-control show-tick" required="required">
@@ -93,7 +98,6 @@
                 ?>
             </select>
         </div>
-        
     </div>
     <div class="modal-footer border-top-0 d-flex justify-content-center">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>

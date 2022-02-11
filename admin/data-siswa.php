@@ -126,10 +126,27 @@
                         <label for="data2">Kelas</label>
                         <select id="kelass" name="kelas" class="form-control show-tick" required="required" >
                                 <option value="">-- Pilih Kelas --</option>
-                                <option value="VII">VII</option>
-                                <option value="VIII">VIII</option>
-                                <option value="IX">IX</option>
-                                
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                                <option value="VII-E">VII-E</option>
+                                <option value="VII-F">VII-F</option>
+                                <option value="VII-G">VII-G</option>
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                                <option value="VIII-E">VIII-E</option>
+                                <option value="VIII-F">VIII-F</option>
+                                <option value="VIII-G">VIII-G</option>
+                                <option value="IX-A">IX-A</option>
+                                <option value="IX-B">IX-B</option>
+                                <option value="IX-C">IX-C</option>
+                                <option value="IX-D">IX-D</option>
+                                <option value="IX-E">IX-E</option>
+                                <option value="IX-F">IX-F</option>
+                                <option value="IX-G">IX-G</option>
                         </select>
                       </div>
                       <div class="form-group">
@@ -139,7 +156,7 @@
                       <div class="form-group">
                         <label for="data2">Tanggal Lahir</label>
                         <input id="tgl_lahir" type="date" class="form-control" name="tgl_lahir" required="required">
-                      </div>  
+                      </div>
                     </div>
                     <div class="modal-footer border-top-0 d-flex justify-content-center">
                       <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
@@ -188,10 +205,27 @@
                         <label for="data2">Kelas</label>
                         <select name="kelas" class="form-control show-tick" required="required" >
                                 <option value="">-- Pilih Kelas --</option>
-                                <option value="VII">VII</option>
-                                <option value="VIII">VIII</option>
-                                <option value="IX">IX</option>
-                                
+                                <option value="VII-A">VII-A</option>
+                                <option value="VII-B">VII-B</option>
+                                <option value="VII-C">VII-C</option>
+                                <option value="VII-D">VII-D</option>
+                                <option value="VII-E">VII-E</option>
+                                <option value="VII-F">VII-F</option>
+                                <option value="VII-G">VII-G</option>
+                                <option value="VIII-A">VIII-A</option>
+                                <option value="VIII-B">VIII-B</option>
+                                <option value="VIII-C">VIII-C</option>
+                                <option value="VIII-D">VIII-D</option>
+                                <option value="VIII-E">VIII-E</option>
+                                <option value="VIII-F">VIII-F</option>
+                                <option value="VIII-G">VIII-G</option>
+                                <option value="IX-A">IX-A</option>
+                                <option value="IX-B">IX-B</option>
+                                <option value="IX-C">IX-C</option>
+                                <option value="IX-D">IX-D</option>
+                                <option value="IX-E">IX-E</option>
+                                <option value="IX-F">IX-F</option>
+                                <option value="IX-G">IX-G</option>
                         </select>
                       </div>
                       <div class="form-group">

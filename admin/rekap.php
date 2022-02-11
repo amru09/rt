@@ -3,10 +3,16 @@
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-<h1 class="h4 mb-0 text-gray-800 border-bottom">‎<b>Rekapitulasi Kehadiran</b></h1>
+        <a href="index.php?page=riwayat-absen" class="d-none d-sm-inline-block btn btn-primary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Kembali</a>
+        <h1 class="h3 mb-0 text-gray-800"><b>Daftar Absen</b></h1>
 <!-- ditambahin icon surat di kiri tulisannya -->
 
+<?php 
+    $ID_KELAS = $_GET['id'];
+    $qry_kelas = mysqli_query($mysqli, "SELECT * FROM tb_qrcode WHERE id = $ID_KELAS");
+    $data_kelas = mysqli_fetch_array($qry_kelas);
 
+?>
 </div>
 
 <!-- DataTables Example -->
@@ -21,30 +27,24 @@
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
-                <th>MATA PELAJARAN</th>
-                <th>TANGGAL</th>
-                <th>JAM</th>
-                <th>STATUS</th>
-                <th>ACTION</th>
+                <th>NIM</th>
+                <th>NAMA</th>
+                <th>KELAS</th>
             </tr>
         </thead>
         <tbody>
             <?php 
-                $dt = mysqli_query($mysqli, "SELECT * FROM tb_qrcode a LEFT JOIN tb_mapel b ON a.id_mapel = b.id_mapel");
+                $ID_GURU = $data_kelas['id_guru'];
+                $ID_MAPEL = $data_kelas['id_mapel'];
+                $TGL = $data_kelas['tgl'];
+                $WAKTU = $data_kelas['waktu'];
+                $dt = mysqli_query($mysqli, "SELECT * FROM tb_kehadiran a LEFT JOIN tb_siswa b ON  a.id_siswa = b.id_siswa WHERE a.id_guru = '$ID_GURU' AND a.id_mapel = '$ID_MAPEL' AND a.tgl = '$TGL' AND a.waktu = '$WAKTU'");
                 while($data = mysqli_fetch_array($dt)){
             ?>
             <tr>
-                <td><?php echo $data['nama_mapel'];?></td>
-                <td><?php echo $data['tgl'];?></td>
-                <td><?php echo $data['waktu'];?></td>
-                <td><?php echo $data['id_mapel'];?></td>
-                <td>
-                    <ul class="list-inline m-0">
-                    <li class="list-inline-item">
-                        <a href="index.php?page=rekapitulasi-absen&id=<?php  echo $data['id']; ?>" class="btn btn-success btn-sm rounded-0" title="Lihat Rekap"><i class="fa fa-eye"></i> Lihat Data</a>
-                    </li>
-                </ul>
-                </td>
+                <td><?php echo $data['id_siswa'];?></td>
+                <td><?php echo $data['nama'];?></td>
+                <td><?php echo $data['kelas'];?></td>
             </tr>
             <!-- Modal Delete -->
             <!-- Modal DELETE DATA -->
@@ -105,4 +105,44 @@
                         </div>
                     </div>
 
+            <!-- Modal ADD DATA -->
+            <div class="modal fade" id="addDataModal" tabindex="-1" role="dialog" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered modal-lg">
+                <div class="modal-content">
+
+                  <div class="modal-header border-bottom-secondary">
+                    <h5 class="modal-title text-gray-900">Tambah - Data Guru</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+                  <form action="controller_mapel.php?action=insert" method="POST" enctype="multipart/form-data">
+                    <div class="modal-body text-gray-900">
+                      <div class="form-group">
+                        <label for="data2">Kode Mata Pelajaran</label>
+                        <input type="text" class="form-control" name="kode">
+                      </div>
+                      <div class="form-group">
+                        <label for="data2">Nama Mata Pelajaran</label>
+                        <input type="text" class="form-control" name="nama_mapel">
+                      </div>
+                    </div>
+                    <div class="modal-footer border-top-0 d-flex justify-content-center">
+                      <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
+                      <button type="submit" class="btn btn-success">Simpan</button>
+                    </div>
+                  </form>
+
+                </div>
+              </div>
+            </div>
+
             
+
+            <!-- Modal EDIT DATA -->
+
+<script type="text/javascript">
+    $('.confirmation').on('click', function(e) {
+       return confirm('Anda Yakin Menghapus Data Ini?');
+    }); </script>

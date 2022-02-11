@@ -20,6 +20,7 @@ include_once("admin/config/base-url.php");
 			session_start();
 			$_SESSION['id_user']    = $row['id_guru'];
 			$_SESSION['nama']        = $row['nama'];
+			$_SESSION['val'] = NULL;
 
 			if($row['hak_akses']==1){
 					$_SESSION['status'] = 'ADMIN';
@@ -45,6 +46,7 @@ include_once("admin/config/base-url.php");
 			$_SESSION['nama']       = $row['nama'];
 			$_SESSION['kelas']		= $row['kelas'];
 			$_SESSION['status'] = 'SISWA';
+			$_SESSION['val'] = 'null';
 
 			// Jika Sukses, redirect halaman menggunakan javascript
 			echo json_encode(array('status' => 'ok', 'url'=>$base_url_back.'/index.php'));

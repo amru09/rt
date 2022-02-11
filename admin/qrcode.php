@@ -25,7 +25,7 @@
                     <div class="display-5">Mata Pelajaran : <?php echo $data['nama_mapel'];?></div>
                     <div class="display-5">Tanggal : <?php echo TanggalIndo($tgl); ?></div>
                     <div class="display-5">Pukul : <?php echo $jam; ?></div>
-                    <a href="closeqr.php" class="btn btn-primary mt-4"><i class="fas fa-trash fa-sm text-white-50"></i> Tutup</a>
+                    <a href="closeqrcode.php" class="btn btn-primary mt-4"><i class="fas fa-trash fa-sm text-white-50"></i> Tutup</a>
                 </div>
             </div>
         </div>

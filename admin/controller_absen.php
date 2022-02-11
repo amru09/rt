@@ -18,6 +18,7 @@
 	$result = mysqli_query($mysqli, "INSERT INTO tb_kehadiran SET id_guru='$id_guru', id_siswa='$id_siswa', id_mapel='$id_mapel', kelas='$kelas', tgl='$tgl', waktu='$waktu'") or die(mysqli_error($mysqli));
 
     if ($result) {
+        $_SESSION['val'] = $p;
         echo json_encode(array('status' => 'ok', 'url'=>$base_url_back.'/index.php'));
     } else {
         echo "error";
