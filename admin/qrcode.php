@@ -6,6 +6,10 @@
     $qry = mysqli_query($mysqli, "SELECT * FROM tb_mapel WHERE id_mapel = $mapel");
     $data = mysqli_fetch_array($qry);
 ?>
+    <script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/barcode/qrcode.js"></script>
+	<script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
+	<script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <a href="index.php" class="d-none d-sm-inline-block btn btn-primary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Kembali</a>
