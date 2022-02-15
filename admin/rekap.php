@@ -1,5 +1,9 @@
 <!-- Begin Page Content -->
 <!-- <div class="container-fluid"> -->
+<script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
+<script type="text/javascript" src="assets/barcode/qrcode.js"></script>
+<script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
+<script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
 
 <!-- Page Heading -->
 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -22,8 +26,46 @@
 </div>
 -->
 
-<div class="card-body">
-<div class="table-responsive">
+<div class="card-body row">
+<div class="par col-3">
+    <input type="hidden" id="id_guru<?php echo $data_kelas['id']; ?>" value="<?php echo $data_kelas['id_guru']; ?>">
+    <input type="hidden" id="id_mapel<?php echo $data_kelas['id']; ?>" value="<?php echo $data_kelas['id_mapel']; ?>">
+    <input type="hidden" id="tgl<?php echo $data_kelas['id']; ?>" value="<?php echo $data_kelas['tgl']; ?>">
+    <input type="hidden" id="waktu<?php echo $data_kelas['id']; ?>" value="<?php echo $data_kelas['waktu']; ?>">
+    <div id="qrcode<?php echo $data_kelas['id']; ?>" style="width: 100%;"></div>
+</div>
+<script type="text/javascript">
+  var qrcode<?php echo $data_kelas['id']; ?> = new QRCode(document.getElementById("qrcode<?php echo $data_kelas['id']; ?>"), {
+    width : 223,
+    height : 223
+  });
+
+  function makeCode<?php echo $data_kelas['id']; ?>() {   
+    var id_guru<?php echo $data_kelas['id']; ?> = document.getElementById("id_guru<?php echo $data_kelas['id']; ?>").value;
+    var id_mapel<?php echo $data_kelas['id']; ?> = document.getElementById("id_mapel<?php echo $data_kelas['id']; ?>").value;
+    var tgl<?php echo $data_kelas['id']; ?> = document.getElementById("tgl<?php echo $data_kelas['id']; ?>").value;
+    var waktu<?php echo $data_kelas['id']; ?> = document.getElementById("waktu<?php echo $data_kelas['id']; ?>").value;
+
+    var data_siswa<?php echo $data_kelas['id']; ?> = 
+      id_guru<?php echo $data_kelas['id']; ?>+'||'+
+      id_mapel<?php echo $data_kelas['id']; ?>+'||'+
+      tgl<?php echo $data_kelas['id']; ?>+'||'+
+      waktu<?php echo $data_kelas['id']; ?>;
+
+    if (!data_siswa<?php echo $data_kelas['id']; ?>) {
+      alert("Maaf Input STB dan Nama Langkap Terlebih Dahulu!");
+      return;
+    }
+
+    qrcode<?php echo $data_kelas['id']; ?>.makeCode(data_siswa<?php echo $data_kelas['id']; ?>);
+  }
+
+  $(window).on('load', function(e) {
+    makeCode<?php echo $data_kelas['id']; ?>();
+  });
+
+</script>
+<div class="table-responsive col-9">
     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
         <thead>
             <tr>
@@ -98,12 +140,12 @@
               </div>
             </div>
             <!-- Tutup Mdal Edit -->
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
+                    <?php } ?>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
             <!-- Modal ADD DATA -->
             <div class="modal fade" id="addDataModal" tabindex="-1" role="dialog" aria-hidden="true">

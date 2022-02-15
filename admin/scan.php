@@ -77,7 +77,6 @@
     <script async src="https://cdn.jsdelivr.net/npm/pwacompat@2.0.6/pwacompat.min.js" integrity="sha384-GOaSLecPIMCJksN83HLuYf9FToOiQ2Df0+0ntv7ey8zjUHESXhthwvq9hXAZTifA"
       crossorigin="anonymous">
     </script>
-    <script src="lib/qrcode/bundle.js?v=2"></script>
   
         <audio id="beepAudio">
             <source src="audio/beep.mp3" type="audio/mpeg">
@@ -127,4 +126,5 @@ function MyFunction() {
 
 }
   </script>
+<script src="lib/qrcode/bundle.js?v=2"></script>
 </html>

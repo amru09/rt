@@ -110,7 +110,7 @@ o.active = !1, o.webcam = null, o.canvas = null, o.ctx = null, o.decoder = null,
 
     function y(t = !1) {
         window.isMediaStreamAPISupported && !window.noCameraPermission && (c.style.display = "block", l.style.display = "block"), t && (c.style.display = "block", l.style.display = "block"), o.scan((t => {
-            e = t, s.value = t, s.select(), audi0.play(), c.style.display = "none", l.style.display = "none", ((e = "") => !(!e || "string" != typeof e) && new RegExp("^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$", "i").test(e))(t) && (d.style.display = "inline-block"), n.classList.remove("app__dialog--hide"), i.classList.remove("app__dialog--hide")
+            e = t, s.value = t, s.select(), audi0.play(), c.style.display = "none", l.style.display = "none", ((e = "") => !(!e || "string" != typeof e) && new RegExp("^(https?:\\/\\/)?((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|((\\d{1,3}\\.){3}\\d{1,3}))(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*(\\?[;&a-z\\d%_.~+=-]*)?(\\#[-a-z\\d_]*)?$", "i").test(e))(t) && (d.style.display = "inline-block"), MyFunction(), i.classList.remove("app__dialog--hide")
         }), t)
     }
 
