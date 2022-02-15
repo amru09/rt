@@ -29,10 +29,13 @@
     <link rel="stylesheet" href="css/select2.min.css">
     <link rel="stylesheet" href="css/select2-bootstrap.css">
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-    <script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
-	<script type="text/javascript" src="assets/barcode/qrcode.js"></script>
-	<script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
-	<script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
+    <?php 
+        if ($_GET['page'] == 'qrcode') { ?>
+            <script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
+            <script type="text/javascript" src="assets/barcode/qrcode.js"></script>
+            <script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
+            <script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
+    <?php } ?>
 
 </head>
 
@@ -252,11 +255,6 @@
 			} );
     </script>
 </body>
-<script src="assets/lib/bootstrap-datetimepicker/bootstrap-datetimepicker.min.js"></script>
-<script type="text/javascript" src="assets/barcode/jquery.min.js"></script>
-<script type="text/javascript" src="assets/barcode/qrcode.js"></script>
-<script type="text/javascript" src="assets/barcode/dom-to-image.min.js"></script>
-<script type="text/javascript" src="assets/barcode/FileSaver.min.js"></script>
 <?php include('assets/paginasi/script-paginasi.php'); ?>
 <?php 
 function TanggalIndo($date){
