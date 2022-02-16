@@ -94,6 +94,11 @@
                     <i style="font-size: 17.5px;" class="fas fa-fw fa-book"></i>
                     <span>Rekapitulasi Absen</span></a>
             </li>
+            <li class="nav-item <?php if($_GET['page'] == 'rekap-absen') {echo "active";} ?>" >
+                <a class="nav-link" href="?page=rekap-absen">
+                    <i style="font-size: 17.5px;" class="fas fa-fw fa-book"></i>
+                    <span>Rekapitulasi Absen</span></a>
+            </li>
             
 
             <!-- Session Siswa -->
@@ -168,6 +173,8 @@
                         include "absen-qr.php";
                     } elseif ($_GET['page'] == 'rekapitulasi-absen') {
                         include "rekap.php";
+                    } elseif ($_GET['page'] == 'rekap-absen') {
+                        include "rekapitulasi-absen.php";
                     } 
                 ?>
             </div> 
