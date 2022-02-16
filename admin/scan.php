@@ -22,6 +22,9 @@
     <link rel="manifest" href="https://qrcodescan.in/manifest.json">
     <link rel="stylesheet" href="https://qrcodescan.in/bundle.css">
     <link rel="preload" as="script" href="https://qrcodescan.in/decoder.js">
+    <!-- Sweet Alert -->
+    <script src="../sweetalert/sweetalert2.min.js"></script>
+    <link rel="stylesheet" href="../sweetalert/sweetalert2.min.css">
   </head>
   <body>
     <div class="app__layout">
@@ -101,10 +104,26 @@ function MyFunction() {
             if (myJson.status == "ok") {
                 console.log(myJson.status);
                 console.log(response);
-                window.location.href = myJson.url;
+                
+                Swal.fire({
+                  icon: 'success',
+                  type: 'success',
+                  title: 'Success!',
+                  text: 'Scan Berhasil',
+                  timer: 2000,
+                });
+                setTimeout(mf, 2500);
+                
             }else{
                 console.log(response);
                 console.log('Error : ', response);
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Oops...',
+                  text: 'Terjadi Kesalhan',
+                  timer: 2000
+                });
+
             }
         }
   });
@@ -123,6 +142,9 @@ function MyFunction() {
 //     }
 
 //     });
+  function mf() {
+    window.location.href = "http://localhost/rt/admin/index.php?page=absen-qr";
+  }
 
 }
   </script>
