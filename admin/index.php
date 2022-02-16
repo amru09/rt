@@ -283,8 +283,6 @@ function TanggalIndo($date){
         $date1 = date('Y-m-d');
 
         $waktu = $exp[1];
-        // $waktu = strtotime($waktu);
-        // $time=strftime("%H:%M");
         $waktu = strtotime($waktu);
         $end = strftime("%X");
         $end = strtotime($end);
