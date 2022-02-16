@@ -37,7 +37,7 @@
                 <td><?php echo $data['nama_mapel'];?></td>
                 <td><?php echo $data['tgl'];?></td>
                 <td><?php echo $data['waktu'];?></td>
-                <td><?php echo $data['id_mapel'];?></td>
+                <td><?php echo statusQRCode($data['tgl'], $data['waktu'])?></td>
                 <td>
                     <ul class="list-inline m-0">
                     <li class="list-inline-item">

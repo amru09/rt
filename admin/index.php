@@ -3,6 +3,7 @@
 <?php include('config/base-url.php'); ?>
 <!DOCTYPE html>
 <html lang="en">
+<?php date_default_timezone_set("Asia/Makassar"); ?>
 <?php $ID_USER = $_SESSION['id_user']; ?>
 
 <head>
@@ -273,7 +274,38 @@ function TanggalIndo($date){
   $result = $tgl . " " . $BulanIndo[(int)$bulan-1] . " ". $tahun;   
   return($result);
 } ?>
+
+<?php
+
+    function statusQRCode($date2, $waktu) {
+
+        $exp = explode('-', $waktu);
+        $date1 = date('Y-m-d');
+
+        $waktu = $exp[1];
+        // $waktu = strtotime($waktu);
+        // $time=strftime("%H:%M");
+        $waktu = strtotime($waktu);
+        $end = strftime("%X");
+        $end = strtotime($end);
+        $waktu_hasil = ($end - $waktu) / 60;
+
+        if ($date1 <= $date2)
+        {
+            if ($waktu_hasil > 0)
+            {
+                echo "<div style='color: red;'>Waktu Kadaluarsa";
+            }else {
+                echo "<div style='color: green;'>Aktif";
+                // echo $waktu;
+            }
+        }else {
+            echo "<div style='color: red;'>Tanggal Kadaluarsa";
+        }
+    }
+?>
 </html>
+</div>
 <script>
 			anchors.options.placement = 'left';
 			anchors.add('.container h1, .container h2, .container h3, .container h4, .container h5');
