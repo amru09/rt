@@ -49,7 +49,6 @@
                 <div class="text-center">
                     <h1 class="display-3">Selamat Datang</h1>
                     <h1 class="display-4">Siswa</h1>
-                    <!-- <a href="scan.php?id_siswa=<?php echo $ID_USER ?>&kelas=<?php echo $_SESSION['kelas']; ?>" class="btn btn-primary"><i class="fas fa-scan" aria-hidden="true"></i> Scan Kelas</a> -->
                 </div>
             </div>
         </div>

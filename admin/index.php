@@ -228,6 +228,33 @@
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#formAbsen").submit(function(e) {
+                var data = $("#formAbsen").serialize();
+                $.ajax({
+
+                        type : 'POST',
+                        url  : 'generate_hadir.php',
+                        data : data,
+                        success :  function(data){      
+                            if (data == "error") {
+                                Swal.fire({
+                                    icon: 'error',
+                                    title: 'Oops...',
+                                    text: 'Akun Mungkin Belum Terkonfirmasi atau Belum Mendaftar',
+                                    footer: '<button class="btn btn-danger register" onclick="Swal.close()">Belum Mendaftar?</button>'
+                                });
+                                
+                            }else{
+                                console.log(data);
+                                document.getElementById("data_absen").innerHTML = data;
+                            }
+                        }
+                });
+            });
+        });
+    </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Core plugin JavaScript-->
@@ -248,6 +275,7 @@
     <script src="js/demo/chart-pie-demo.js"></script>
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script>
         $( ".select2-single, .select2-multiple" ).select2( {
 				placeholder: placeholder,

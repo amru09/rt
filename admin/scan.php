@@ -90,7 +90,7 @@
 
   </body>
 
-  <script type="text/javascript" src="https://e-lpj.ukmldkmajelisjihad.org/admin/assets/js/jquery-1.12.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-mj.min.js"></script>
   <script type="text/javascript">
 function MyFunction() {
     var data = $("#resultform").serialize();
@@ -100,9 +100,7 @@ function MyFunction() {
         data : data,
         success :  function(response){      
             console.log(response);
-            var myJson = JSON.parse(response);
-            if (myJson.status == "ok") {
-                console.log(myJson.status);
+            if (response == "ok") {
                 console.log(response);
                 
                 Swal.fire({
@@ -120,10 +118,10 @@ function MyFunction() {
                 Swal.fire({
                   icon: 'error',
                   title: 'Oops...',
-                  text: 'Terjadi Kesalhan',
+                  text: response,
                   timer: 2000
                 });
-
+                setTimeout(reload, 2300);
             }
         }
   });
@@ -144,6 +142,11 @@ function MyFunction() {
 //     });
   function mf() {
     window.location.href = "http://localhost/rt/admin/index.php?page=absen-qr";
+  }
+
+  function reload() {
+    document.getElementById('resultform').reset();
+    location.reload();
   }
 
 }
