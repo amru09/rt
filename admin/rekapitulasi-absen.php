@@ -31,7 +31,7 @@
     </button>
     </div>
 
-    <!-- Modal buat kelas -->
+    <!-- Modal Cetak rekap -->
     <form action="cetak.php" method="POST" enctype="multipart/form-data">
     <div class="modal-body text-gray-900">
         <div class="form-group">
@@ -100,7 +100,7 @@
     </div>
     <div class="modal-footer border-top-0 d-flex justify-content-center">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">Batal</button>
-        <button type="submit" class="btn btn-success">Generate</button>
+        <button type="submit" class="btn btn-success">Cetak</button>
     </div>
 </form>
 

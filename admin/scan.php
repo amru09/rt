@@ -141,7 +141,7 @@ function MyFunction() {
 
 //     });
   function mf() {
-    window.location.href = "http://localhost/rt/admin/index.php?page=absen-qr";
+    window.location.href = "http://localhost/skripsi_microservices/admin/index.php?page=absen-qr";
   }
 
   function reload() {

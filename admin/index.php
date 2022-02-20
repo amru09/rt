@@ -92,7 +92,7 @@
             <li class="nav-item <?php if($_GET['page'] == 'riwayat-absen') {echo "active";} ?>" >
                 <a class="nav-link" href="?page=riwayat-absen">
                     <i style="font-size: 17.5px;" class="fas fa-fw fa-book"></i>
-                    <span>Rekapitulasi Absen</span></a>
+                    <span>Riwayat</span></a>
             </li>
             <li class="nav-item <?php if($_GET['page'] == 'rekap-absen') {echo "active";} ?>" >
                 <a class="nav-link" href="?page=rekap-absen">
@@ -323,17 +323,16 @@ function TanggalIndo($date){
         $end = strtotime($end);
         $waktu_hasil = ($end - $waktu) / 60;
 
-        if ($date1 <= $date2)
+        if ($date1 >= $date2)
         {
             if ($waktu_hasil > 0)
             {
-                echo "<div style='color: red;'>Waktu Kadaluarsa";
+                echo "<div style='color: red;'>Waktu Sudah Lewat";
             }else {
                 echo "<div style='color: green;'>Aktif";
-                // echo $waktu;
             }
         }else {
-            echo "<div style='color: red;'>Tanggal Kadaluarsa";
+            echo "<div style='color: olive;'>Waktu Belum Mulai";
         }
     }
 ?>
