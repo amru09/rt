@@ -4,7 +4,7 @@
     include 'config/base-url.php';
     include 'config/auth.php';
 
-    $_SESSION['val'] = NULL;
+    $_SESSION['val'] = NULL
 
     echo '<script language="javascript"> window.location.href = "'.$base_url_back.'/index.php" </script>';
 ?>
